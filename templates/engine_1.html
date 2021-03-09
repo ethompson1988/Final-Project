@@ -5,8 +5,29 @@
     <title></title>
 </head>
 <body>
-   <h4>{{ recommender.recommendation1 }}</h4>
-    
-
+    <div>
+        <h3>Recommendation Engine 1</h3>
+        <p>This recommendation engine is a <strong>Content-based Filtering</strong> algorithm. Using a dataframe in the background, 
+           we take the movie title selected, index an array of genre names, and pass that array into a TF-IDF model. TF-IDF stands for: 
+           term-frequency/inverse-document-frequency, it multiplies the frequency of each term in the array divided by the number of terms
+           in the array by the inverse of the frequency of each term in the corpus of documents. This gives us a "weight" for each term in 
+           our array of genres. From there we use cosine similarity to measure the similarity between the genres of other movies and find
+           the closest matches.</p>
+    </div>
+    <div>
+        <ul>   
+            <p>Because you liked {{ movie_title }}, we recommend the following movies:</p>
+            <li>{{ recommendation1.0 }}</li>
+            <li>{{ recommendation1.1 }}</li>
+            <li>{{ recommendation1.2 }}</li>
+            <li>{{ recommendation1.3 }}</li>
+            <li>{{ recommendation1.4 }}</li>
+            <li>{{ recommendation1.5 }}</li>
+            <li>{{ recommendation1.6 }}</li>
+            <li>{{ recommendation1.7 }}</li>
+            <li>{{ recommendation1.8 }}</li>
+            <li>{{ recommendation1.9 }}</li>
+        </ul> 
+    </div>
 </body>
 </html>

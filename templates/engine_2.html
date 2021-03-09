@@ -5,7 +5,23 @@
     <title>Machine Learning for Movie Recommendations</title>
 </head>
 <body>
-   
-
+    <div>
+        <ul>
+            <h1>User {{ user_id }}'s top-rated movies are: </h1>
+                <li>{{ top_rated_movies.0 }}</li>
+                <li>{{ top_rated_movies.1 }}</li>
+                <li>{{ top_rated_movies.2 }}</li>
+                <li>{{ top_rated_movies.3 }}</li>
+                <li>{{ top_rated_movies.4 }}</li>
+        </ul>
+        <ul>
+            <h1>Based on these ratings, we recommend the following movies to user{{ user_id }}:</h1>
+                <li>{{ final_recommendations.0.values.0 }}</li>
+                <li>{{ final_recommendations.1.values.0 }}</li>
+                <li>{{ final_recommendations.2.values.0 }}</li>
+                <li>{{ final_recommendations.3.values.0 }}</li>
+                <li>{{ final_recommendations.4.values.0 }}</li>
+        </ul>
+    </div>
 </body>
 </html>

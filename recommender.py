@@ -55,10 +55,19 @@ def recommendation_engine_1(movie_title):
     similarity = similarity[1:11]
     movie_indices = [i[0] for i in similarity]
     global recommendation1
-    recommendation1 = movie_titles[movie_indices]    
-    return recommendation1
-
-print(f"Because you liked Jumanji, we recommend the following movies: \n{recommendation_engine_1('Jumanji (1995)')}")
+    recommendation1 = movie_titles[movie_indices]   
+    # return f"Because you liked {movie_title}, we recommend the following movies: \n{recommendation1}"
+    return "Because you liked " +  movie_title + ", we recommend the following movies: \n"\
+        + recommendation1[0] + ", " + "\n"\
+        + recommendation1[1] + ", " + "\n"\
+        + recommendation1[2] + ", " + "\n"\
+        + recommendation1[3] + ", " + "\n"\
+        + recommendation1[4] + ", " + "\n"\
+        + recommendation1[5] + ", " + "\n"\
+        + recommendation1[6] + ", " + "\n"\
+        + recommendation1[7] + ", " + "\n"\
+        + recommendation1[8] + ", " + "\n"\
+        + recommendation1[9]  
 
 #Turn df into matrix with users as rows and movies as columns
 collab_df = ratings_df.pivot(index = 'userId', columns ='movieId', values = 'rating').fillna(0)
@@ -82,15 +91,18 @@ def recommendation_engine_2(full_predictions_df, userId, movies_df, ratings_df):
     user_ratings_df = ratings_df[ratings_df.userId == (userId)]
     user_full = (user_ratings_df.merge(movies_df, how = 'left', left_on = 'movieId', right_on = 'movieId').
                      sort_values(['rating'], ascending=False))
+    global top_rated_movies
     top_rated_movies = user_full['title'].to_list()
     recommended_movie_ids = user_predictions_df.index
     already_rated_ids = user_ratings_df['movieId'].to_list()
+    global final_recommendations
     final_recommendations = []
     for x in recommended_movie_ids:
         if x not in already_rated_ids:
-            final_recommendations.append(movies_df.loc[movies_df['movieId']==x]['title'])
+            final_recommendations.append(movies_df.loc[movies_df['movieId']==x].title)
+            
     
-    return f"UserID {userId} ",top_rated_movies[0:10], final_recommendations[0:5]
+    return f"UserID {userId}",top_rated_movies[0:10], final_recommendations[0:5]
 
 from numpy import random
 random_user = np.random.randint(0,high=668)

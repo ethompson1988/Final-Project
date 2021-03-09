@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel='shortcut icon' href="{{ url_for('static', filename='favicon.ico') }}">
     <meta charset="UTF-8">
     <title>Machine Learning for Movie Recommendations</title>
 </head>
 <body>
-    <p><a class="btn btn-primary" href='engine_1.html' role='button'>Recommendation Engine 1</a></p>
-    <p><a class="btn btn-primary" href='engine_2.html' role='button'>Recommendation Engine 2</a></p>
-
+    <div>
+        <h1>Recommendation Engines</h1>
+        <h2>What is a recommendation engine?</h2>
+        <p>A recommendation engine is a machine learning system that attempts to predict user preferences based on the user's history, 
+           demographic information, the preferences of similar users, and content-based filtering. In recent years, recommendation 
+           engines have become an essential tool for any online business or community, allowing businesses to optimize user engagement 
+           and experience, therefore creating higher customer retention. Just a few examples of companies using recommendation engines are:
+           Netflix, Facebook, Google, Amazon...</p>
+        <h2>What are the different types of recommendation engines?</h2>
+        <p>There two main types of recommendation engines, <em>content-based filtering</em>, and <em>collaberative filtering</em>. Both types
+           have pros and cons as they vary in terms of information and computation needed to run algorithms. Most high-level implementations
+           use a hybrid of these two systems.</p>
+        <h3>Content-based Filtering</h3>
+        <p>Content-based filtering is based solely on the comparison of one product to others. For example, if a Netflix user watches an action 
+           movie starring Keanu Reeves, the algorithm would examine feature vectors of that movie and return movies with similar feature vectors
+           recommend to the user and will likely return additional action movies and/or additional movies starring Keanu Reeves. Algorithms used 
+           in content-based filtering use different methods to measure similarity in feature vectors that contain keywords, genres, etc.. In our
+           example below, we use TF-IDF to measure the importance of terms in our genre column of our dataframe and then measure similarities
+           using the Cosine Similarity method.
+        </p>
+        <div>
+            <label>Select Movie</label>
+            <form name="movie_title" action="/engine_1" method="post">
+                <select name='movie_title'>
+                {% for movie_title in movie_titles %}
+                    <option value="{{ movie_title }}">{{ movie_title }}</option>
+                {% endfor %}
+                </select>
+                <input type="submit" name="movie_title" value="go"/>
+            </form>
+        </div>
+        <h3>Collaborative Filtering</h3>
+        <p>Collaborative filtering uses user data to predict taste and future behavior. The algorithm can be as simple as comparing
+           users' ratings of products or content, or as complex as using metadata and context awareness to target the use of advertising,
+           content, or sales.</p>
+        <div>
+            <label>Select User</label>
+            <form name="user_id" action="/engine_2" method="post">
+                <select name="user_id">
+                {% for user_id in range(0,668,1) %}
+                    <option value="{{ user_id }}">{{ user_id }}</option>
+                {% endfor %}
+                </select>
+                <input type="submit" name="userId" value="go"/>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
