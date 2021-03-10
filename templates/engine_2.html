@@ -5,23 +5,75 @@
     <title>Machine Learning for Movie Recommendations</title>
 </head>
 <body>
-    <div>
-        <ul>
-            <h1>User {{ user_id }}'s top-rated movies are: </h1>
-                <li>{{ top_rated_movies.0 }}</li>
-                <li>{{ top_rated_movies.1 }}</li>
-                <li>{{ top_rated_movies.2 }}</li>
-                <li>{{ top_rated_movies.3 }}</li>
-                <li>{{ top_rated_movies.4 }}</li>
-        </ul>
-        <ul>
-            <h1>Based on these ratings, we recommend the following movies to user{{ user_id }}:</h1>
-                <li>{{ final_recommendations.0.values.0 }}</li>
-                <li>{{ final_recommendations.1.values.0 }}</li>
-                <li>{{ final_recommendations.2.values.0 }}</li>
-                <li>{{ final_recommendations.3.values.0 }}</li>
-                <li>{{ final_recommendations.4.values.0 }}</li>
-        </ul>
+<div class="container-md">
+    <h1>User {{ user_id }}'s top-rated movies are: </h1>
+    <div class="card-group">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ top_rated_movies.0 }}</h5>
+            </div>
+            <img src="{{ top_rated_posters.0 }}" class="card-img-btm" alt="...">
+        </div>    
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ top_rated_movies.1 }}</h5>
+            </div>
+            <img src="{{ top_rated_posters.1 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ top_rated_movies.2 }}</h5>
+            </div>
+            <img src="{{ top_rated_posters.2 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ top_rated_movies.3 }}</h5>
+            </div>
+            <img src="{{ top_rated_posters.3 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ top_rated_movies.4 }}</h5>
+            </div>
+            <img src="{{ top_rated_posters.4 }}" class="card-img-btm" alt="...">
+        </div>
     </div>
+    <h1>Based on these ratings, we recommend the following movies to user{{ user_id }}:</h1>
+    <div class="card-group">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ final_recommendations.0.values.0 }}</h5>
+            </div>
+            <img src="{{ final_recommendations_posters.0 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ final_recommendations.1.values.0 }}</h5>
+            </div>
+            <img src="{{ final_recommendations_posters.1 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ final_recommendations.2.values.0 }}</h5>
+            </div>
+            <img src="{{ final_recommendations_posters.2 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ final_recommendations.3.values.0 }}</h5>
+            </div>
+            <img src="{{ final_recommendations_posters.3 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ final_recommendations.4.values.0 }}</h5>
+            </div>
+            <img src="{{ final_recommendations_posters.4 }}" class="card-img-btm" alt="...">
+        </div> 
+    </div>
+</div>
 </body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </html>

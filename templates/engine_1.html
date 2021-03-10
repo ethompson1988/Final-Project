@@ -5,6 +5,7 @@
     <title></title>
 </head>
 <body>
+<div class="container-md">    
     <div>
         <h3>Recommendation Engine 1</h3>
         <p>This recommendation engine is a <strong>Content-based Filtering</strong> algorithm. Using a dataframe in the background, 
@@ -14,20 +15,47 @@
            our array of genres. From there we use cosine similarity to measure the similarity between the genres of other movies and find
            the closest matches.</p>
     </div>
-    <div>
-        <ul>   
-            <p>Because you liked {{ movie_title }}, we recommend the following movies:</p>
-            <li>{{ recommendation1.0 }}</li>
-            <li>{{ recommendation1.1 }}</li>
-            <li>{{ recommendation1.2 }}</li>
-            <li>{{ recommendation1.3 }}</li>
-            <li>{{ recommendation1.4 }}</li>
-            <li>{{ recommendation1.5 }}</li>
-            <li>{{ recommendation1.6 }}</li>
-            <li>{{ recommendation1.7 }}</li>
-            <li>{{ recommendation1.8 }}</li>
-            <li>{{ recommendation1.9 }}</li>
-        </ul> 
+    <div class="card-group">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie_title }}</h5>
+            </div>
+            <img src="{{ movie_title_poster }}" class="card-img-btm" alt="..." style="width:300px; height:400px">
+        </div>
     </div>
+    <div class="card-group">  
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation1.0 }}</h5>
+            </div>
+            <img src="{{ recommendation1_posters.0 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation1.1 }}</h5>
+            </div>
+            <img src="{{ recommendation1_posters.1 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation1.2 }}</h5>
+            </div>
+            <img src="{{ recommendation1_posters.2 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation1.3 }}</h5>
+            </div>
+            <img src="{{ recommendation1_posters.3 }}" class="card-img-btm" alt="...">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation1.4 }}</h5>
+            </div>
+            <img src="{{ recommendation1_posters.4 }}" class="card-img-btm" alt="...">
+        </div>
+    </div>
+</div>
 </body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </html>

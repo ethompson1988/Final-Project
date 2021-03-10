@@ -6,19 +6,26 @@
     <title>Machine Learning for Movie Recommendations</title>
 </head>
 <body>
+<div class="container-md">    
     <div>
         <h1>Recommendation Engines</h1>
+    </br>
         <h2>What is a recommendation engine?</h2>
+    </br>
         <p>A recommendation engine is a machine learning system that attempts to predict user preferences based on the user's history, 
            demographic information, the preferences of similar users, and content-based filtering. In recent years, recommendation 
            engines have become an essential tool for any online business or community, allowing businesses to optimize user engagement 
            and experience, therefore creating higher customer retention. Just a few examples of companies using recommendation engines are:
            Netflix, Facebook, Google, Amazon...</p>
+    </br>
         <h2>What are the different types of recommendation engines?</h2>
+    </br>
         <p>There two main types of recommendation engines, <em>content-based filtering</em>, and <em>collaberative filtering</em>. Both types
            have pros and cons as they vary in terms of information and computation needed to run algorithms. Most high-level implementations
            use a hybrid of these two systems.</p>
+    </br>
         <h3>Content-based Filtering</h3>
+    </br>
         <p>Content-based filtering is based solely on the comparison of one product to others. For example, if a Netflix user watches an action 
            movie starring Keanu Reeves, the algorithm would examine feature vectors of that movie and return movies with similar feature vectors
            recommend to the user and will likely return additional action movies and/or additional movies starring Keanu Reeves. Algorithms used 
@@ -26,6 +33,7 @@
            example below, we use TF-IDF to measure the importance of terms in our genre column of our dataframe and then measure similarities
            using the Cosine Similarity method.
         </p>
+    </br>
         <div>
             <label>Select Movie</label>
             <form name="movie_title" action="/engine_1" method="post">
@@ -37,10 +45,14 @@
                 <input type="submit" name="movie_title" value="go"/>
             </form>
         </div>
+    </br>
+    </br>
         <h3>Collaborative Filtering</h3>
+    </br>
         <p>Collaborative filtering uses user data to predict taste and future behavior. The algorithm can be as simple as comparing
            users' ratings of products or content, or as complex as using metadata and context awareness to target the use of advertising,
            content, or sales.</p>
+    </br>
         <div>
             <label>Select User</label>
             <form name="user_id" action="/engine_2" method="post">
@@ -53,5 +65,9 @@
             </form>
         </div>
     </div>
+</div>
 </body>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </html>
