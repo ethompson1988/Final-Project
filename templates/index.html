@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <link rel='shortcut icon' href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
     <meta charset="UTF-8">
     <title>Machine Learning for Movie Recommendations</title>
 </head>
 <body>
-<div class="container-md">    
+<div class="container-sm">    
     <div>
         <h1>Recommendation Engines</h1>
     </br>
@@ -65,6 +66,37 @@
             </form>
         </div>
     </div>
+</br>
+</br>
+<table>
+    <tr>
+        <th>                       </th>
+        <th>Content-based Filtering</th>
+        <th>Collaborative Filtering</th>
+    </tr>
+    <tr>
+        <th>Scalability</th>
+        <td>Low dimensionality and computational requirements</br>make content-based filtering cheap and easy to scale.</td>
+        <td>Scalability is hard for collaberative filtering</br>due to rapid data growth with diminishing returns.</td>
+    </tr>
+    <tr>
+        <th>Computational Requirements</th>
+        <td>Very low</td>
+        <td>Highly variable</td>
+    </tr>
+    <tr>
+        <th>Noise Level</th>
+        <td>Low noise</td>
+        <td>High noise due to variability in movie popularity</br>and ratings.</td>
+    </tr>
+    <tr>
+        <th>Accuracy</th>
+        <td>Accuracy is limited due to low dimensionality of</br>data used in learning.</td>
+        <td>Collaborative filtering methods have a much higher</br>accuracy potential thanks to unlimited number of input vectors</td>
+    </tr>
+</table>
+</br>
+</br>
 </div>
 </body>
     <!-- CSS only -->

@@ -85,5 +85,6 @@ def get_posters_4(recommendations):
                 final_recommendations_posters.append(poster_data)
             else:
                 final_recommendations_posters.append(x)
+    return final_recommendations_posters
         
 
